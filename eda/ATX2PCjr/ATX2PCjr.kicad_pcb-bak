@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 11)
+    (drawings 12)
     (tracks 74)
     (zones 0)
     (modules 4)
@@ -452,6 +452,7 @@
     )
   )
 
+  (gr_poly (pts (xy 240 10) (xy 240 90) (xy 260 90) (xy 260 10)) (layer F.SilkS) (width 0.15))
   (gr_text " - +\nPower" (at 139.7 67.31 270) (layer F.SilkS)
     (effects (font (size 1.5 1.5) (thickness 0.3)))
   )
