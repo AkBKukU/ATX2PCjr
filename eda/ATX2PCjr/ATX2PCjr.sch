@@ -176,4 +176,34 @@ Text Label 5250 4300 0    50   ~ 0
 GND
 Text Label 5250 4200 0    50   ~ 0
 PS-ON
+$Comp
+L Connector_Generic:Conn_01x04 J5
+U 1 1 5B6FB298
+P 5650 1550
+F 0 "J5" H 5729 1542 50  0000 L CNN
+F 1 "Floppy Power" H 5729 1451 50  0000 L CNN
+F 2 "ATX2PCjr:Mate-N-Lok Vertical" H 5650 1550 50  0001 C CNN
+F 3 "~" H 5650 1550 50  0001 C CNN
+	1    5650 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 1550 5250 1650
+Wire Wire Line
+	5250 1650 5450 1650
+Wire Wire Line
+	5250 1550 5450 1550
+Wire Wire Line
+	5450 1550 5500 1550
+Text Label 5250 1550 0    50   ~ 0
+GND
+Wire Wire Line
+	5150 1750 5450 1750
+Wire Wire Line
+	5150 1450 5450 1450
+Text Label 5150 1750 0    50   ~ 0
++12V
+Text Label 5150 1450 0    50   ~ 0
++5V
+Connection ~ 5450 1550
 $EndSCHEMATC
