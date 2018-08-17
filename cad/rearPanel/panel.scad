@@ -1,5 +1,8 @@
 $fn=24;
 
+// Configuration
+powerHoleType = 0; // 0 = slot , 1 = 5.5mm barrel jack
+
 panelSize=[23,83,4];
 
 caseHoles=[[17,43],[52,83]];
@@ -8,30 +11,45 @@ switchSize=[10.2,18,50];
 switchHoleDia=2.6;
 switchHoleSpace=23.8;
 
-powerDia = 7.7;
+powerDia = 8;
 
-bottomSupportThickness=2;
+bottomSupportThickness=1.9;
 bottomSupportPos=[panelSize[0]/2+caseHoleWidth/2,caseHoles[0][0]-5,panelSize[2]];
 
 topSupportDepth=12;
 topSupportSize=9;
 
+
+
 module panel()
 {
 	difference() {
-		cube(panelSize);
+		union() {
+			cube(panelSize);
+			bottomSupport();
+			topSupport();
+		}
 		switchHole();
-		powerHole();
+		if(powerHoleType) {
+			powerHole();
+		} else {
+			powerSlot();
+		}
 	}
 
-bottomSupport();
-topSupport();
 }
 
 module topSupport()
 {	
+	difference()
+	{
 	translate([0,panelSize[1]-topSupportSize,0])
 	cube([panelSize[0],topSupportSize,topSupportDepth]);
+	
+	translate([-1,panelSize[1]-topSupportSize*0.35,topSupportDepth])
+	rotate([-45,0,0])
+	cube([panelSize[0]+2,topSupportSize,topSupportDepth]);
+	}
 }
 
 module bottomSupport()
@@ -62,6 +80,16 @@ module switchHole()
 	}
 }
 
+module powerSlot()
+{
+	translate([
+		panelSize[0]/2-caseHoleWidth/2,
+		caseHoles[1][0],
+		-topSupportDepth
+	])
+
+	cube([caseHoleWidth,panelSize[1]*2,topSupportDepth*3]);
+}
 
 module powerHole()
 {
