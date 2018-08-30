@@ -1,7 +1,7 @@
 $fn=24;
 
 // Configuration
-powerHoleType = 0; // 0 = slot , 1 = 5.5mm barrel jack
+powerHoleType = 1; // 0 = slot , 1 = 5.5mm barrel jack
 
 panelSize=[23,83,4];
 
@@ -23,16 +23,35 @@ topSupportSize=9;
 
 module panel()
 {
+	botpos=(caseHoles[0][1]-caseHoles[0][0])/2+caseHoles[0][0];
+	toppos=(caseHoles[1][1]-caseHoles[1][0])/2+caseHoles[1][0];
 	difference() {
 		union() {
 			cube(panelSize);
 			bottomSupport();
 			topSupport();
 		}
-		switchHole();
+
 		if(powerHoleType) {
+			translate([
+				panelSize[0]/2,
+				toppos,
+				0
+			])
+			switchHole();
+			translate([
+				panelSize[0]/2,
+				botpos,
+				0
+			])
 			powerHole();
 		} else {
+			translate([
+				panelSize[0]/2,
+				botpos,
+				0
+			])
+			switchHole();
 			powerSlot();
 		}
 	}
@@ -61,19 +80,12 @@ module bottomSupport()
 
 module switchHole()
 {
-	pos=(caseHoles[0][1]-caseHoles[0][0])/2+caseHoles[0][0]-switchSize[1]/2;
-
-	translate([
-		panelSize[0]/2-switchSize[0]/2,
-		pos,
-		-25
-	])
-	cube(switchSize);
+	cube(switchSize,true);
 
 	for(side = [-1:2:1]) {
 		translate([
-			panelSize[0]/2,
-			(caseHoles[0][1]-caseHoles[0][0])/2+caseHoles[0][0]-(switchHoleSpace/2*side),
+			0,
+			switchHoleSpace/2*side,
 			-panelSize[2]
 		])
 		cylinder(r=switchHoleDia/2,panelSize[2]*3);
@@ -94,8 +106,8 @@ module powerSlot()
 module powerHole()
 {
 	translate([
-		panelSize[0]/2,
-		(caseHoles[1][1]-caseHoles[1][0])/2+caseHoles[1][0],
+		0,
+		0,
 		-panelSize[2]
 	])
 
