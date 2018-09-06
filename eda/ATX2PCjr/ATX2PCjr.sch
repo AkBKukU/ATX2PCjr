@@ -206,4 +206,27 @@ Text Label 5150 1750 0    50   ~ 0
 Text Label 5150 1450 0    50   ~ 0
 +5V
 Connection ~ 5450 1550
+$Comp
+L Connector_Generic_MountingPin:Conn_01x03_MountingPin J6
+U 1 1 5B909F5C
+P 6950 2200
+F 0 "J6" H 7038 2166 50  0000 L CNN
+F 1 "Fan Header" H 7038 2075 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 6950 2200 50  0001 C CNN
+F 3 "~" H 6950 2200 50  0001 C CNN
+	1    6950 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 2300 6350 2300
+Wire Wire Line
+	6350 2300 6350 2100
+Wire Wire Line
+	6350 2100 6750 2100
+Wire Wire Line
+	6750 2200 6550 2200
+Text Label 6550 2100 0    50   ~ 0
+GND
+Text Label 6550 2200 0    50   ~ 0
++12V
 $EndSCHEMATC
