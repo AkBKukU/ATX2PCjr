@@ -13,7 +13,7 @@ switchHoleSpace=23.8;
 
 powerDia = 8;
 
-bottomSupportThickness=1.9;
+bottomSupportThickness=1.8;
 bottomSupportPos=[panelSize[0]/2+caseHoleWidth/2,caseHoles[0][0]-5,panelSize[2]];
 
 topSupportDepth=12;
@@ -75,7 +75,7 @@ module bottomSupport()
 {
 
 	translate(bottomSupportPos)
-	cube([2,panelSize[1]-bottomSupportPos[1]-topSupportSize,10]);
+	cube([bottomSupportThickness,panelSize[1]-bottomSupportPos[1]-topSupportSize,10]);
 };
 
 module switchHole()
