@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /remote/S-XS-UBUNTU/2tb/projects/videos/20-prod/0x0035-PCJrATXPSU/projects/eda/ATX2PCjr/eda/ATX2PCjr/ATX2PCjr.sch)
-    (date "Wed 05 Sep 2018 07:46:55 PM MST")
+    (date "Wed 05 Sep 2018 10:07:52 PM MST")
     (tool "Eeschema 5.0.0-fee4fd1~65~ubuntu17.10.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -17,7 +17,7 @@
   (components
     (comp (ref J1)
       (value "ATX Connector")
-      (footprint Connector_Molex:Molex_Mini-Fit_Jr_5566-20A2_2x10_P4.20mm_Vertical)
+      (footprint ATX2PCjr:Molex_Mini-Fit_Jr_5566-20A2_2x10_P4.20mm_Vertical-LARGE)
       (datasheet ~)
       (libsource (lib Connector_Generic_MountingPin) (part Conn_01x20_MountingPin) (description "Generic connectable mounting pin connector, single row, 01x20, script generated (kicad-library-utils/schlib/autogen/connector/)"))
       (sheetpath (names /) (tstamps /))

@@ -19,6 +19,14 @@ bottomSupportPos=[panelSize[0]/2+caseHoleWidth/2,caseHoles[0][0]-5,panelSize[2]]
 topSupportDepth=12;
 topSupportSize=9;
 
+module screwHole(r,h,c,b)
+{rotate([0,0,45])union(){
+	cylinder(r=r,h=h,center=c);
+	translate([-r-b,-b/2,-h])
+	cube([b*2+r*2,b,h*3]);
+	translate([-b/2,-r-b,-h])
+	cube([b,b*2+r*2,h*3]);
+}}
 
 
 module panel()
@@ -88,7 +96,8 @@ module switchHole()
 			switchHoleSpace/2*side,
 			-panelSize[2]
 		])
-		cylinder(r=switchHoleDia/2,panelSize[2]*3);
+		//cylinder(r=switchHoleDia/2,panelSize[2]*10);
+		screwHole(r=switchHoleDia/2,h=panelSize[2]*10,c=false,b=0.5);
 	}
 }
 

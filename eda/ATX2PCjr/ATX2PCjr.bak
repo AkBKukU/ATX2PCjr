@@ -207,10 +207,10 @@ Text Label 5150 1450 0    50   ~ 0
 +5V
 Connection ~ 5450 1550
 $Comp
-L Connector_Generic_MountingPin:Conn_01x03_MountingPin J5
+L Connector_Generic_MountingPin:Conn_01x03_MountingPin J6
 U 1 1 5B909F5C
 P 6950 2200
-F 0 "J5" H 7038 2166 50  0000 L CNN
+F 0 "J6" H 7038 2166 50  0000 L CNN
 F 1 "Fan Header" H 7038 2075 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 6950 2200 50  0001 C CNN
 F 3 "~" H 6950 2200 50  0001 C CNN
