@@ -8,8 +8,8 @@ panelSize=[23,83,4];
 caseHoles=[[17,43],[52,83]];
 caseHoleWidth=13.5;
 switchSize=[10.2,18,50];
-switchHoleDia=2.6;
-switchHoleSpace=23.8;
+switchHoleDia=6.5;
+switchHoleSpace=[14/2,9.4/2];
 
 powerDia = 8;
 
@@ -67,12 +67,12 @@ module panel()
 }
 
 module topSupport()
-{	
+{
 	difference()
 	{
 	translate([0,panelSize[1]-topSupportSize,0])
 	cube([panelSize[0],topSupportSize,topSupportDepth]);
-	
+
 	translate([-1,panelSize[1]-topSupportSize*0.35,topSupportDepth])
 	rotate([-45,0,0])
 	cube([panelSize[0]+2,topSupportSize,topSupportDepth]);
@@ -88,17 +88,13 @@ module bottomSupport()
 
 module switchHole()
 {
-	cube(switchSize,true);
-
-	for(side = [-1:2:1]) {
-		translate([
-			0,
-			switchHoleSpace/2*side,
-			-panelSize[2]
-		])
-		//cylinder(r=switchHoleDia/2,panelSize[2]*10);
-		screwHole(r=switchHoleDia/2,h=panelSize[2]*10,c=false,b=0.5);
+	translate([0,switchHoleSpace[0],0]) {
+		translate([0,0,panelSize[2]*6])
+		cube([switchHoleSpace[0]*2,switchHoleSpace[0]*2,panelSize[2]*10],true);
+		screwHole(r=switchHoleDia/2,h=panelSize[2]*10,c=false,b=1);
 	}
+	translate([0,-switchHoleSpace[1],0])
+	screwHole(r=switchHoleDia/2,h=panelSize[2]*10,c=false,b=1);
 }
 
 module powerSlot()
