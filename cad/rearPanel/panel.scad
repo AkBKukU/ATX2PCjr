@@ -1,14 +1,14 @@
 $fn=24;
 
 // Configuration
-powerHoleType = 1; // 0 = slot , 1 = 5.5mm barrel jack
+powerHoleType = 0; // 0 = slot , 1 = 5.5mm barrel jack
 
 panelSize=[23,83,4];
 
 caseHoles=[[17,43],[52,83]];
 caseHoleWidth=13.5;
 switchSize=[10.2,18,50];
-switchHoleDia=6.5;
+switchHoleDia=6.8;
 switchHoleSpace=[14/2,9.4/2];
 
 powerDia = 8;
