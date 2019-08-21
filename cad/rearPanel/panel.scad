@@ -8,8 +8,8 @@ panelSize=[23,83,4];
 caseHoles=[[17,43],[52,83]];
 caseHoleWidth=13.5;
 switchSize=[10.2,18,50];
-switchHoleDia=6.8;
-switchHoleSpace=[14/2,9.4/2];
+switchHoleDia=7;
+switchHoleSpace=[13.25/2,9.4/2];
 
 powerDia = 8;
 
